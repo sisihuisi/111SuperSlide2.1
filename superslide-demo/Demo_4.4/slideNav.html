@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Language" content="zh-CN">
+		<meta name="Keywords" content="SuperSlide,jQuery-滑动块导航">
+		<meta name="Description" content="SuperSlide,jQuery-滑动块导航">
+		<title>SuperSlide - 滑动块导航</title>
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<script src="../js/jquery.SuperSlide.2.1.1.js"></script>
+	</head>
+
+	<body>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			body {
+				background: #fff;
+				font: normal 12px/22px 宋体;
+			}
+			img {
+				border: 0;
+			}
+			a {
+				text-decoration: none;
+				color: #333;
+			}
+			a:hover {
+				color: #FF8400;
+			}
+			.js {
+				width: 90%;
+				margin: 10px auto 0 auto;
+			}
+			.js p {
+				padding: 5px 0;
+				font-weight: bold;
+				overflow: hidden;
+			}
+			.js p span {
+				float: right;
+			}
+			.js p span a {
+				color: #f00;
+				text-decoration: underline;
+			}
+			.js textarea {
+				height: 190px;
+				width: 98%;
+				padding: 5px;
+				border: 1px solid #ccc;
+				border-top: 2px solid #aaa;
+				border-left: 2px solid #aaa;
+			}
+			.clearfix:after {
+				content: ".";
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			.navBar {
+				position: relative;
+				z-index: 1;
+				padding-left: 10px;
+				height: 60px;
+				line-height: 60px;
+				background: url(images/line.gif) repeat-x 0 bottom #fff;
+				color: #333;
+			}
+			.nav {
+				position: relative;
+				width: 980px;
+				margin: 0 auto;
+				font-family: "Microsoft YaHei", SimSun, SimHei;
+				font-size: 14px;
+			}
+			.nav a {
+				color: #333;
+			}
+			.nav h3 {
+				font-size: 100%;
+				font-weight: normal;
+			}
+			.nav .m {
+				float: left;
+				position: relative;
+				z-index: 1;
+			}
+			.nav .s {
+				float: left;
+				width: 3px;
+				text-align: center;
+				color: #D4D4D4;
+				font-size: 12px;
+			}
+			.nav h3 a {
+				display: block;
+				width: 124px;
+				text-align: center;
+				font-weight: bold;
+			}
+			.nav .sub {
+				display: none;
+				position: absolute;
+				left: -3px;
+				top: 60px;
+				z-index: 1;
+				width: 128px;
+				border: 1px solid #E6E4E3;
+				border-top: 0;
+				background: #fff;
+			}
+			.nav .sub li {
+				text-align: center;
+				padding: 0 8px;
+				margin-bottom: -1px;
+			}
+			.nav .sub li a {
+				display: block;
+				border-bottom: 1px solid #E6E4E3;
+				padding: 8px 0;
+				height: 28px;
+				line-height: 28px;
+				color: #666;
+			}
+			.nav .sub li a:hover {
+				color: #FE7700;
+			}
+			.nav .block {
+				height: 3px;
+				width: 130px;
+				background: #FE7700;
+				position: absolute;
+				left: 0;
+				top: 57px;
+				overflow: hidden;
+			}
+		</style>
+		<div class="navBar">
+			<ul class="nav clearfix">
+				<li class="m">
+					<h3><a target="_blank" href="#">网站首页</a></h3>
+				</li>
+				<li class="s">|</li>
+				<li class="m">
+					<h3><a target="_blank" href="#">如何使用</a></h3>
+					<ul class="sub">
+						<li><a href="#">如何使用</a>
+						</li>
+						<li><a href="#">如何使用</a>
+						</li>
+						<li><a href="#">如何使用</a>
+						</li>
+						<li><a href="#">如何使用</a>
+						</li>
+					</ul>
+				</li>
+				<li class="s">|</li>
+				<li class="m ">
+					<h3><a target="_blank" href="#">查看参数</a></h3>
+					<ul class="sub">
+						<li><a href="#">查看参数</a>
+						</li>
+						<li><a href="#">查看参数</a>
+						</li>
+						<li><a href="#">查看参数</a>
+						</li>
+						<li><a href="#">查看参数</a>
+						</li>
+					</ul>
+				</li>
+				<li class="s">|</li>
+				<li class="m">
+					<h3><a target="_blank" href="#">基础效果</a></h3>
+					<ul class="sub">
+						<li><a href="#">基础效果</a>
+						</li>
+						<li><a href="#">基础效果</a>
+						</li>
+						<li><a href="#">基础效果</a>
+						</li>
+						<li><a href="#">基础效果</a>
+						</li>
+					</ul>
+				</li>
+				<li class="s">|</li>
+				<li class="m">
+					<h3><a target="_blank" href="#">扩展效果</a></h3>
+					<ul class="sub">
+						<li><a href="#">扩展效果</a>
+						</li>
+						<li><a href="#">扩展效果</a>
+						</li>
+						<li><a href="#">扩展效果</a>
+						</li>
+						<li><a href="#">扩展效果</a>
+						</li>
+					</ul>
+				</li>
+				<li class="s">|</li>
+				<li class="m">
+					<h3><a target="_blank" href="#">SuperSlide</a></h3>
+					<ul class="sub">
+						<li><a href="#">SuperSlide</a>
+						</li>
+						<li><a href="#">SuperSlide</a>
+						</li>
+						<li><a href="#">SuperSlide</a>
+						</li>
+						<li><a href="#">SuperSlide</a>
+						</li>
+					</ul>
+				</li>
+				<li class="s">|</li>
+				<li class="m">
+					<h3><a target="_blank" href="#">大话主席</a></h3>
+					<ul class="sub">
+						<li><a href="#">大话主席</a>
+						</li>
+						<li><a href="#">大话主席</a>
+						</li>
+						<li><a href="#">大话主席</a>
+						</li>
+						<li><a href="#">大话主席</a>
+						</li>
+					</ul>
+				</li>
+				<li class="block"></li>
+			</ul>
+		</div>
+		<div class="content" style="height:120px"></div>
+		<script type="text/javascript">
+			(function() {
+				var ind = 0;
+				var nav = $(".nav");
+				var init = $(".nav .m").eq(ind);
+				var block = $(".nav .block");
+				block.css({
+					"left": init.position().left - 3
+				});
+				nav.hover(function() {}, function() {
+					block.animate({
+						"left": init.position().left - 3
+					}, 200);
+				});
+				$(".nav").slide({
+					type: "menu",
+					titCell: ".m",
+					targetCell: ".sub",
+					delayTime: 300,
+					triggerTime: 0,
+					returnDefault: true,
+					defaultIndex: ind,
+					startFun: function(i, c, s, tit) {
+						block.animate({
+							"left": tit.eq(i).position().left - 3
+						}, 200);
+					}
+				});
+			})()
+		</script>
+		<div class="js">
+			<p><span>效果参考网址：<a href="#"></a></span>js调用：</p>
+			<textarea>
+				(function(){ var ind = 2; var nav= $(".nav"); var init = $(".nav .m").eq(ind); var block = jQuery(".nav .block"); block.css({"left":init.position().left-3}); nav.hover(function(){},function(){ block.animate({"left":init.position().left-3},100);
+				}); jQuery(".nav").slide({ type:"menu", titCell:".m", targetCell:".sub", delayTime:300, triggerTime:0, returnDefault:true, defaultIndex:ind, startFun:function(i,c,s,tit){ block.animate({"left":tit.eq(i).position().left-3},100); } }); })()
+			</textarea>
+		</div>
+	</body>
+
+</html>
